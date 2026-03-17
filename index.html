@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENRICH 2026 - Worship & Music Camp Planning Hub 🎵🙏</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050b14;
+            --bg-panel: #0d1829;
+            --accent-cyan: #00d2ff;
+            --accent-gold: #ffaa00;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 50% 0%, #0a2e4a 0%, transparent 40%),
+                radial-gradient(circle at 50% 100%, #332400 0%, transparent 40%);
+            color: var(--text-light);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px 60px;
+            position: relative;
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            color: #fff;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            opacity: 0.8;
+            letter-spacing: 1px;
+        }
+        h1 {
+            font-size: 6em;
+            margin: 0;
+            background: linear-gradient(to bottom, #ffe89e, #ffaa00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            font-weight: 900;
+            line-height: 0.9;
+            filter: drop-shadow(0 0 10px rgba(255, 170, 0, 0.3));
+        }
+        .script-text {
+            font-family: 'Caveat', cursive;
+            font-size: 4em;
+            color: #fff;
+            margin-top: -20px;
+            margin-bottom: 20px;
+            transform: rotate(-3deg);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+        .glow-box {
+            display: inline-block;
+            border: 2px solid var(--accent-cyan);
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4), inset 0 0 15px rgba(0, 210, 255, 0.2);
+            padding: 15px 40px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .glow-box h2 {
+            margin: 0;
+            background: linear-gradient(to bottom, #ffffff, #00d2ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            padding: 0;
+            filter: drop-shadow(0 0 5px rgba(0, 210, 255, 0.5));
+        }
+        .workshop-text {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin: 15px 0 5px;
+            color: #fff;
+        }
+        .tagline {
+            font-size: 1.1em;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 40px;
+            margin: 20px 0;
+            background: var(--bg-panel);
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(0, 210, 255, 0.1);
+        }
+        section > h2 {
+            color: var(--accent-gold);
+            border-left: 5px solid var(--accent-cyan);
+            padding-left: 20px;
+            margin: 0 0 30px 0;
+            font-size: 2em;
+            text-transform: uppercase;
+        }
+        h3 {
+            color: var(--accent-cyan);
+            margin-top: 30px;
+            font-size: 1.3em;
+            border-bottom: 1px solid rgba(0, 210, 255, 0.2);
+            padding-bottom: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: rgba(0,0,0,0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        th {
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--accent-cyan);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 0.5px;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tr:hover td {
+            background: rgba(255,255,255,0.05);
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+        li {
+            padding: 12px 0 12px 35px;
+            position: relative;
+            border-bottom: 1px dashed rgba(255,255,255,0.1);
+            transition: all 0.2s ease;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        li:before {
+            content: "▹";
+            color: var(--accent-cyan);
+            position: absolute;
+            left: 10px;
+            top: 12px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+        
+        /* Interactive Checklist Styles */
+        #checklist li {
+            cursor: pointer;
+            border-radius: 8px;
+            margin-bottom: 5px;
+        }
+        #checklist li:hover {
+            background-color: rgba(0, 210, 255, 0.05);
+            padding-left: 40px;
+        }
+        #checklist li.completed {
+            text-decoration: line-through;
+            color: var(--text-muted);
+            background-color: rgba(0,0,0,0.2);
+        }
+        #checklist li.completed:before {
+            content: "✓";
+            color: var(--text-muted);
+        }
+
+        .emoji {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: rgba(0,0,0,0.5);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-muted);
+            font-size: 0.95em;
+            letter-spacing: 0.5px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            body { padding: 10px; }
+            h1 { font-size: 3em; }
+            .script-text { font-size: 2.5em; }
+            .glow-box h2 { font-size: 1.5em; }
+            section { padding: 20px; margin: 10px 0; }
+            table, th, td { font-size: 0.9em; padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="top-bar">
+                <span>AG | ASSEMBLIES OF GOD</span>
+                <span>NYM ✚</span>
+            </div>
+            <h1>ENRICH 2026</h1>
+            <div class="script-text">Hyderabad</div>
+            <div class="glow-box">
+                <h2>Exclusive Course On<br>Worship Leadership</h2>
+            </div>
+            <div class="workshop-text">10-Day Worship & Music Workshop</div>
+            <div class="tagline">Level Up. Lead Bold. Learn Worship. ✨</div>
+        </header>
+
+        <section id="checklist">
+            <h2>📋 Workshop Planning Checklist</h2>
+            <p><em>Click on any item to mark it as completed!</em></p>
+
+            <h3>👥 1. Small Group Leaders (10)</h3>
+            <ul>
+                <li>Recruit 10 committed leaders skilled in worship, music, and youth discipleship.</li>
+                <li>Assign each a specific small group (balance by age/gender).</li>
+                <li>Brief on goals: spiritual growth, TAWG, music practice.</li>
+                <li>Daily check-ins for devotions, attendance, oversight.</li>
+                <li>Provide teaching materials for sessions.</li>
+            </ul>
+
+            <h3>🏠 2. Dorm Caretakers (Boys & Girls)</h3>
+            <ul>
+                <li>Appoint 4 male for boys' dorm + 4 female for girls' (responsible early risers).</li>
+                <li>Train on 6AM wake-up, devotions, duties.</li>
+                <li>Oversight: Breakfast attendance, 11PM lights-out, spiritual accountability.</li>
+                <li>Daily: Room checks, prayer times, conflict resolution.</li>
+            </ul>
+
+            <h3>🤝 3. Ministry Support Teams</h3>
+            <ul>
+                <li><strong>Dining Team:</strong> 4-6 for food prep, serving, hygiene, cleanup 🍲</li>
+                <li><strong>Discipline Team:</strong> 3-4 to enforce rules, monitor youth ⚖️</li>
+                <li><strong>Mobile Team:</strong> 2-3 for lockers, timed access 📱</li>
+                <li><strong>Errands Team:</strong> 2-3 for trips/supplies 🚗</li>
+                <li><strong>Menu Team:</strong> 10-day balanced menu + backups 📝</li>
+                <li><strong>First Aid:</strong> 2 trained + kit/hospital contacts 🏥</li>
+                <li><strong>Transport:</strong> 2-3 vehicles ready 🚙</li>
+                <li><strong>Food Service:</strong> Extra serving hands</li>
+                <li><strong>Cleanup:</strong> Delegates + 4 volunteers 🧹</li>
+            </ul>
+
+            <h3>🚪 4. Welcome & Registration Team</h3>
+            <ul>
+                <li>Reception</li>
+                <li>Registration: Forms, payments, allotments</li>
+                <li>Room allotment</li>
+                <li>Registration kits</li>
+            </ul>
+
+            <h3>🗺️ 5. Venue Assistance & Logistics</h3>
+            <ul>
+                <li>Guide to venue</li>
+                <li>Transport options</li>
+                <li>Support arrival/departure</li>
+            </ul>
+
+            <h3>🙌 6. Ministry Team</h3>
+            <ul>
+                <li>Prayer times availability</li>
+                <li>Altar calls</li>
+                <li>Small group devotions</li>
+                <li>Guest worship teams (Hyd)</li>
+                <li>Pastors for ministry</li>
+            </ul>
+        </section>
+
+        <section id="schedule">
+            <h2>⏰ Daily Schedule</h2>
+            <table>
+                <tr><th>Time</th><th>Activity</th></tr>
+                <tr><td>6:00 – 7:00 AM</td><td>Morning Devotion (TAWG) 🙏</td></tr>
+                <tr><td>7:00 – 7:30 AM</td><td>Work Duty 💪</td></tr>
+                <tr><td>7:30 – 8:00 AM</td><td>Breakfast 🍳</td></tr>
+                <tr><td>8:00 – 8:45 AM</td><td>Get ready 🛀</td></tr>
+                <tr><td>8:45 AM</td><td>Be present in the chapel ⛪</td></tr>
+                <tr><td>9:00 – 10:30 AM</td><td>Session 1 (Worship & Word) 🎤📖</td></tr>
+                <tr><td>10:30 – 10:45 AM</td><td>Tea ☕</td></tr>
+                <tr><td>11:00 AM – 1:00 PM</td><td>Session 2 – Break out / Training 👥</td></tr>
+                <tr><td>1:00 – 2:00 PM</td><td>Lunch 🍽️</td></tr>
+                <tr><td>2:00 – 4:00 PM</td><td>Session 3 – Break out / Training 👥</td></tr>
+                <tr><td>4:00 – 4:30 PM</td><td>Tea ☕</td></tr>
+                <tr><td>5:00 – 7:30 PM</td><td>Session 4 (Worship & Word) 🎵🙌</td></tr>
+                <tr><td>8:00 – 8:30 PM</td><td>Dinner (for residential delegates) 🍲</td></tr>
+                <tr><td>8:30 – 10:00 PM</td><td>Practice! Practice! Practice! 🎸🥁</td></tr>
+                <tr><td>11:00 PM</td><td>Lights off 😴</td></tr>
+            </table>
+        </section>
+
+        <section id="sound">
+            <h2>🔊 Sound System & Equipment</h2>
+            <table>
+                <tr><th>Item</th><th>Quantity</th></tr>
+                <tr><td>Mixer</td><td>1</td></tr>
+                <tr><td>Speakers (Main Out)</td><td>2</td></tr>
+                <tr><td>Stage Monitors</td><td>2</td></tr>
+                <tr><td>Mics</td><td>5</td></tr>
+                <tr><td>MIC Stands</td><td>3</td></tr>
+                <tr><td>XLR Cables</td><td>As Required</td></tr>
+                <tr><td>TS Cables (Instrument Jacks)</td><td>As Required</td></tr>
+                <tr><td>Power Cables</td><td>As Required</td></tr>
+                <tr><td>Extension Box</td><td>As Required</td></tr>
+            </table>
+
+            <h3>🎹 Main Hall Instruments</h3>
+            <ul>
+                <li>Keyboard</li>
+                <li>Drums</li>
+                <li>Acoustic Guitar</li>
+                <li>Electric Guitar</li>
+                <li>Bass Guitar</li>
+            </ul>
+
+            <h3>🏫 Classroom Instruments</h3>
+            <ul>
+                <li>3 Sets of Drum Kit</li>
+            </ul>
+
+            <h3>📺 Miscellaneous</h3>
+            <ul>
+                <li>Projector</li>
+                <li>HDMI Cables (1 Long & 1 Short)</li>
+                <li>White Board + Stand & Markers (Different Colors)</li>
+                <li>A4 Size Paper Bundle (1)</li>
+                <li>Pens (As Required)</li>
+                <li>Television (for Media)</li>
+                <li>Badges for Delegates, Pastors, Volunteers & Teachers</li>
+                <li>Note Pads</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>ENRICH 2026 | Prepared for Leaders' Discussion | Let's Make Worship Echo! 🎶✨</p>
+        </footer>
+    </div>
+
+    <script>
+        // Add interactivity to the checklist
+        document.addEventListener('DOMContentLoaded', () => {
+            const checklistItems = document.querySelectorAll('#checklist li');
+            
+            checklistItems.forEach(item => {
+                // Toggle 'completed' class on click
+                item.addEventListener('click', () => {
+                    item.classList.toggle('completed');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
