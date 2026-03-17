@@ -213,11 +213,38 @@
         }
         @media (max-width: 768px) {
             body { padding: 10px; }
-            h1 { font-size: 3em; }
-            .script-text { font-size: 2.5em; }
-            .glow-box h2 { font-size: 1.5em; }
-            section { padding: 20px; margin: 10px 0; }
-            table, th, td { font-size: 0.9em; padding: 10px; }
+            header { padding: 20px 10px 30px; }
+            .top-bar { 
+                flex-direction: column; 
+                align-items: center; 
+                gap: 8px; 
+                font-size: 0.9em; 
+            }
+            h1 { font-size: clamp(2.8em, 12vw, 4.5em); line-height: 1.1; margin-bottom: 5px; }
+            .script-text { font-size: 2.5em; margin-top: -5px; margin-bottom: 10px; }
+            .glow-box { 
+                padding: 15px; 
+                width: 95%; 
+                box-sizing: border-box; 
+                margin: 15px auto;
+            }
+            .glow-box h2 { font-size: 1.2em; letter-spacing: 1px; }
+            .workshop-text { font-size: 1.1em; padding: 0 10px; }
+            .tagline { font-size: 0.95em; }
+            section { padding: 25px 15px; margin: 15px 0; }
+            section > h2 { font-size: 1.4em; margin-bottom: 20px; }
+            h3 { font-size: 1.15em; }
+            table { 
+                display: block; 
+                overflow-x: auto; 
+                -webkit-overflow-scrolling: touch;
+                border-radius: 8px;
+            }
+            th, td { padding: 12px 10px; font-size: 0.85em; }
+            ul { margin: 10px 0; }
+            li { padding: 10px 0 10px 25px; font-size: 0.9em; }
+            li:before { left: 5px; top: 10px; }
+            #checklist li:hover { padding-left: 25px; } /* Prevents text jumping when tapping on mobile */
         }
     </style>
 </head>
